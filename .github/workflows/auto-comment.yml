@@ -12,18 +12,18 @@ jobs:
           pullRequestOpened: |
                 👋 @{{ author }}
                  Thank you for raising your pull request.
-                 Please make sure you have followed our contributing guidelines. We will review it as soon as possible.
+                 Please make sure you have followed our [contributing guidelines](CONTRIBUTING.md). We will review it as soon as possible.
   
   no-contribution-comment:
     runs-on: ubuntu-latest
     if: ${{ github.base_ref != 'main'}}
     steps:
-      - uses: wow-actions/auto-comment@v1
-        with:
+      - run: gh pr close "$PR_NUMBER" --comment "$COMMENT"
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-          pullRequestOpened: |
+          PR_NUMBER: ${{ github.event.number}}
+          COMMENT: |
                 👋 @{{ author }}
                  Thank you for raising your pull request.
-                 We do not accept pull requests on this branch.
+                 We do not accept pull requests on this branch. Please see our [README](README.md) and our [coontributing guidelines](CONTRIBUTING.md) for more details.
             
