@@ -12,7 +12,7 @@ jobs:
           pullRequestOpened: |
                 👋 @{{ author }}
                  Thank you for raising your pull request.
-                 Please make sure you have followed our [contributing guidelines](CONTRIBUTING.md). We will review it as soon as possible.
+                Please make sure you have followed our [contributing guidelines](${{ github.server_url }}/${{ github.repository }}/blob/main/CONTRIBUTING.md). We will review it as soon as possible.
   
   no-contribution-comment:
     runs-on: ubuntu-latest
@@ -27,6 +27,6 @@ jobs:
           GH_REPO: ${{ github.repository }}
           COMMENT: >
                 👋 ${{ github.event.pull_request.user.login }}
-                 Thank you for raising your pull request.
-                 We do not accept pull requests on this branch. Please see our [README](README.md) and our [contributing guidelines](CONTRIBUTING.md) for more details.
+                 Thank you for raising your pull request. We do not accept pull requests on this branch. 
+                 Please see our [README](${{ github.server_url }}/${{ github.repository }}/blob/main/README.md) and [contributing guidelines](${{ github.server_url }}/${{ github.repository }}/blob/main/CONTRIBUTING.md) for more details.
             
