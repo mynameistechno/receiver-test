@@ -24,6 +24,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.number}}
+          GH_REPO: ${{ github.repository }}
+          REPO: ${{ github.event.repository}}
           COMMENT: |
                 👋 @{{ author }}
                  Thank you for raising your pull request.
