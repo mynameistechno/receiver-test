@@ -28,5 +28,5 @@ jobs:
           COMMENT: >
                 👋 ${{ github.event.pull_request.user.login }}
                  Thank you for raising your pull request.
-                 We do not accept pull requests on this branch. Please see our [README](README.md) and our [coontributing guidelines](CONTRIBUTING.md) for more details.
+                 We do not accept pull requests on this branch. Please see our [README](README.md) and our [contributing guidelines](CONTRIBUTING.md) for more details.
             
