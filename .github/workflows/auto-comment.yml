@@ -16,6 +16,8 @@ jobs:
   
   no-contribution-comment:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     if: ${{ github.base_ref != 'main'}}
     steps:
       - run: gh pr close "$PR_NUMBER" --comment "$COMMENT"
