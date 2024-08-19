@@ -1,7 +1,7 @@
 name: Comment on Stale Issues
 on:
     schedule:
-      - cron: '30 0/10 * * *'
+      - cron: '40 * * * *'
   
 jobs:
   stale:
