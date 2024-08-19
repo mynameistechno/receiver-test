@@ -10,7 +10,7 @@ jobs:
       - uses: actions/stale@v9
         with:
             days-before-close: -1
-            days-before-issue-stale: 30
+            days-before-issue-stale: 2
             stale-pr-message: "Add a nice message, can mention maintainers to draw attention"
             stale-issue-message: "Add a nice message, can mention maintainers to draw attention"
             
