@@ -1,0 +1,15 @@
+name: Receive
+
+on:
+  repository_dispatch:
+    types: my-test-event
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    name: Build and publish
+    env:
+        ref: ${{ github.event.client_payload.ref }}
+    steps:
+      - name: Output text
+        run: echo "Here is some output $ref"
