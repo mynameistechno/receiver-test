@@ -2,13 +2,20 @@ name: Receive
 
 on:
   workflow_dispatch:
+    inputs:
+      ref:
+        description: 'Git ref'
+        required: true
+        type: string      
+      sha:
+        description: 'Git sha'
+        required: true
+        type: string        
 
 jobs:
   echo:
     runs-on: ubuntu-latest
     name: Build and publish
-    env:
-        ref: ${{ github.event.client_payload.ref }}
     steps:
-      - name: Output text
-        run: echo "Here is some output $ref"
+      - name: Output inputs
+        run: echo '${{ inputs.ref }}, ${{ inputs.sha }}'
