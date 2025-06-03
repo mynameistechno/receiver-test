@@ -1,8 +1,7 @@
 name: Receive
 
 on:
-  repository_dispatch:
-    types: my-test-event
+  workflow_dispatch:
 
 jobs:
   echo:
